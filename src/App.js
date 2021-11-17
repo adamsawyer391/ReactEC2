@@ -37,9 +37,9 @@ const useStyles = makeStyles((theme) => ({
 
 function App() {
 
-  
 
-  axios.get('3.208.8.233', introObject).then((res) => {
+
+  axios.get('3.208.8.233').then((res) => {
     console.log(res.data)
   }).catch((error) => {
     console.log(error);
