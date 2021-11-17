@@ -10,6 +10,7 @@ import clsx from 'clsx';
 import { AppBar } from '@mui/material';
 import { makeStyles, useTheme } from '@mui/styles'
 import { height } from '@mui/system';
+import axios from 'axios';
 
 //https://stackoverflow.com/questions/63124161/attempted-import-error-switch-is-not-exported-from-react-router-dom
 /**
@@ -36,6 +37,14 @@ const useStyles = makeStyles((theme) => ({
 
 function App() {
 
+  
+
+  axios.get('3.208.8.233', introObject).then((res) => {
+    console.log(res.data)
+  }).catch((error) => {
+    console.log(error);
+  })
+
   const classes = useStyles();
   const theme = useTheme();
 
@@ -59,6 +68,10 @@ function App() {
             <Route path='objects' element={ <Objects /> } />
           </Routes>
         </Router>
+
+        <button onClick={onSubmit}>
+          GET Request
+        </button>
 
       </div>
       
